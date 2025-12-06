@@ -1,0 +1,14 @@
+{
+    "geode": "3.0.0",
+    "gd": {
+        "win": "2.206",
+        "android": "2.206",
+        "mac": "2.206"
+    },
+    "id": "dein.username.imageimporter",
+    "name": "Image Importer",
+    "version": "v1.0.0",
+    "developer": "Dein Name",
+    "description": "Import images into Geometry Dash levels as pixel art",
+    "repository": "https://github.com/deinusername/imageimporter"
+}
