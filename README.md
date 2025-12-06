@@ -1,96 +1,177 @@
-# Image Importer for Geometry Dash
+# 🎨 Image Importer for Geometry Dash
 
-A Geode mod that allows you to import images into Geometry Dash levels as pixel art!
+[![Geode](https://img.shields.io/badge/Geode-4.9.0-00C7FF?logo=geometrydash)](https://geode-sdk.org)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)]()
+[![License](https://img.shields.io/badge/license-MIT-green)]()
 
-## Features
+> **Transform any image into pixel art directly in your Geometry Dash levels!**
 
-- 🖼️ Import PNG, JPG, JPEG, and BMP images
-- 🎨 Automatic color conversion to GD objects
-- ⚡ Three quality levels (Low/Medium/High)
-- 👁️ Live image preview
-- 🎯 Smart transparent pixel handling
+![Banner](https://via.placeholder.com/800x200/1a1a2e/16213e?text=Image+Importer)
 
-## Installation
+## ✨ Features
 
-### Method 1: In-Game (Recommended)
+| Feature | Description |
+|---------|-------------|
+| 🖼️ **Multiple Formats** | PNG, JPG, JPEG, BMP support |
+| 🎯 **Quality Presets** | Low, Medium, High detail levels |
+| 👁️ **Live Preview** | See your image before importing |
+| ⚡ **Fast Processing** | Optimized for performance |
+| 🎨 **True Colors** | Accurate RGB to GD conversion |
+| 💡 **Modern UI** | Clean, intuitive interface |
+
+## 📦 Installation
+
+### Method 1: Geode In-Game (Recommended)
 1. Open Geometry Dash with Geode installed
-2. Go to the Geode menu
-3. Search for "Image Importer"
-4. Click Install
+2. Click the Geode button on main menu
+3. Go to "Download" tab
+4. Search for "Image Importer"
+5. Click "Install" and restart
 
 ### Method 2: Manual Installation
 1. Download the latest `.geode` file from [Releases](https://github.com/Nopro497138/Image-Importer/releases)
-2. Place it in your `GeometryDash/geode/mods/` folder
+2. Place in `GeometryDash/geode/mods/` folder
 3. Restart Geometry Dash
 
-## Usage
+## 🎮 Usage
 
-1. Open the level editor
-2. Look for the **"IMG"** button on the left side
-3. Click it to open the Image Importer
-4. Select your image file
-5. Choose detail level:
-   - **Low**: Fast, fewer objects (8x8 sampling)
-   - **Medium**: Balanced (4x4 sampling)
-   - **High**: Detailed, more objects (2x2 sampling)
-6. Click **"Import"**
+1. **Open Editor** - Launch any level in the editor
+2. **Click "IMG"** - Find the button on the left side
+3. **Select Image** - Browse and choose your file
+4. **Pick Quality** - Choose Low/Medium/High
+5. **Import** - Click "Import to Level"
 
-## Building from Source
+## 📊 Quality Settings
+```
+┌─────────┬──────────────┬──────────┬────────┐
+│ Quality │ Sample Rate  │ Objects  │ Speed  │
+├─────────┼──────────────┼──────────┼────────┤
+│ Low     │ 8x8 pixels   │ ~100     │ ⚡ Fast │
+│ Medium  │ 4x4 pixels   │ ~500     │ 🔄 OK   │
+│ High    │ 2x2 pixels   │ ~2000    │ 🐌 Slow │
+└─────────┴──────────────┴──────────┴────────┘
+```
+
+## 💡 Best Practices
+
+### ✅ Do
+- Start with **Low** quality for testing
+- Use images under 500x500 pixels
+- Save your level before importing
+- Test with simple images first
+
+### ❌ Don't
+- Import huge images on High quality
+- Forget to save before importing
+- Use High detail for backgrounds
+- Import without testing first
+
+## 🔧 Building from Source
 
 ### Prerequisites
+```bash
+# Required tools
 - CMake 3.21+
 - C++20 compiler
 - Geode SDK
+- Git
+```
 
 ### Build Steps
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/Nopro497138/Image-Importer.git
 cd Image-Importer
 
-# Build with Geode CLI
+# Configure and build
 geode build
 
-# Install to Geometry Dash
+# Install to GD
 geode package install
 ```
 
-## Tips
+### Development
+```bash
+# Clean build
+rm -rf build && geode build --clean
 
-- Start with **Low detail** for large images to test
-- Images spawn at position **(100, 100)** in the level
-- Transparent pixels are automatically skipped
-- High detail works best with images under 200x200 pixels
+# Build for specific platform
+geode build --platform win
+geode build --platform android
+geode build --platform mac
+```
 
-## Performance
+## 📸 Screenshots
 
-| Detail Level | Sampling Rate | Best For |
-|--------------|---------------|----------|
-| Low | 8x8 | Large images (500x500+) |
-| Medium | 4x4 | Normal images (200-500px) |
-| High | 2x2 | Small images (<200px) |
+### Main Interface
+The sleek, modern popup interface with real-time preview.
 
-## Known Limitations
+### Quality Comparison
+See the difference between Low, Medium, and High settings.
 
-- Very large images with High detail may cause lag
-- Objects are created as simple colored squares (ID: 1)
-- Maximum recommended image size: 1000x1000 pixels
+### In-Game Result
+Your imported pixel art directly in the level!
 
-## License
+## 🎯 Technical Specifications
 
-This project is licensed under the MIT License.
+| Specification | Value |
+|--------------|-------|
+| **Supported Formats** | PNG, JPG, JPEG, BMP |
+| **Max Image Size** | 1000x1000 (recommended) |
+| **Object Type** | Square Block (ID: 1) |
+| **Color Method** | Direct RGB→ccColor3B |
+| **Spawn Position** | (150, 150) |
+| **Pixel Spacing** | 1.0 units |
+| **Alpha Threshold** | < 50 = transparent |
 
-## Contributing
+## 🐛 Known Issues
 
-Contributions are welcome! Feel free to:
-- Report bugs
-- Suggest features
-- Submit pull requests
+- Large images (>1000x1000) may cause lag
+- No automatic object grouping
+- No undo for bulk operations
+- High detail can create 5000+ objects
 
-## Support
+## 🗺️ Roadmap
 
-Having issues? [Open an issue](https://github.com/Nopro497138/Image-Importer/issues) on GitHub!
+- [ ] Object grouping feature
+- [ ] Custom color palettes
+- [ ] Dithering options
+- [ ] Batch import
+- [ ] Preview grid
+- [ ] Export templates
+
+## 🤝 Contributing
+
+Contributions are welcome! Please:
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📝 License
+
+This project is licensed under the MIT License - see LICENSE file.
+
+## 💬 Support
+
+- **Issues**: [GitHub Issues](https://github.com/Nopro497138/Image-Importer/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Nopro497138/Image-Importer/discussions)
+- **Discord**: [Geode Discord Server](https://discord.gg/geode)
+
+## 🙏 Acknowledgments
+
+- Geode SDK Team for the amazing framework
+- Geometry Dash community for inspiration
+- Contributors and testers
+
+## 📊 Stats
+
+![GitHub stars](https://img.shields.io/github/stars/Nopro497138/Image-Importer)
+![GitHub issues](https://img.shields.io/github/issues/Nopro497138/Image-Importer)
+![GitHub downloads](https://img.shields.io/github/downloads/Nopro497138/Image-Importer/total)
 
 ---
 
-Made with ❤️ for the Geometry Dash community
+**⭐ If you like this mod, please star the repository!**
+
+**Made with ❤️ by Noahjo**
