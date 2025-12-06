@@ -1,200 +1,229 @@
-# 🎨 Image Importer
+# 🎨 Image Importer for Geometry Dash
 
-**Transform images into pixel art with a professional, modern interface!**
+[![Geode](https://img.shields.io/badge/Geode-4.9.0-00C7FF?logo=geometrydash&logoColor=white)](https://geode-sdk.org)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/Nopro497138/Image-Importer/releases)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/Nopro497138/Image-Importer/total)](https://github.com/Nopro497138/Image-Importer/releases)
 
-## ✨ Features
+> **🚀 Transform any image into pixel art with a professional, modern interface!**
 
-- 🖼️ **Multi-Format Support**: PNG, JPG, JPEG, BMP
-- 🎯 **Three Quality Levels**: Low, Medium, High with visual toggles
-- 👁️ **Real-Time Preview**: See your image before importing
-- 📊 **Live Statistics**: Image dimensions and object count estimates
-- 🎨 **Accurate Colors**: True RGB to GD conversion
-- 💡 **Modern UI**: Professional 2-panel interface with status feedback
-- ⚡ **Smart Processing**: Automatic transparent pixel filtering
+![Header](https://via.placeholder.com/800x200/0f0f1e/16213e?text=Image+Importer+%7C+Professional+Pixel+Art+Converter)
 
-## 🎮 How to Use
+## ✨ Key Features
 
-### Quick Start
-1. Open the Level Editor
-2. Click the **"IMG"** button (circular, top-left area)
-3. The Image Importer popup opens
+<table>
+<tr>
+<td width="50%">
 
-### Import Process
-1. **Select Image**
-   - Click "Select Image" button
-   - Browse for your file (PNG, JPG, JPEG, BMP)
-   - Preview appears instantly on the right panel
+### 🎯 Quality System
+- **Low**: Fast processing (~100 objects)
+- **Medium**: Balanced quality (~500 objects)
+- **High**: Maximum detail (~2000 objects)
 
-2. **Choose Quality**
-   - **Low**: Fast, ~100 objects (8x8 sampling)
-   - **Medium**: Balanced, ~500 objects (4x4 sampling) ⭐ **Recommended**
-   - **High**: Detailed, ~2000 objects (2x2 sampling)
+</td>
+<td width="50%">
 
-3. **Import**
-   - Click the big "Import" button
-   - Wait for processing (shown in status bar)
-   - Done! Your pixel art appears at position (150, 150)
+### 💡 Modern UI
+- Professional 2-panel layout
+- Real-time preview system
+- Color-coded status feedback
+- Toggle-based quality selection
 
-## 💡 Tips & Best Practices
+</td>
+</tr>
+</table>
 
-### For Best Results
-- ✅ Start with **Medium quality** for testing
-- ✅ Use images under 500x500 pixels
-- ✅ High contrast images work best
-- ✅ Save your level before importing
-- ✅ Clear, colorful images convert better
+## 📸 Screenshots
 
-### Performance Guide
-```
-Image Size    | Low Detail | Medium Detail | High Detail
-------------- | ---------- | ------------- | -----------
-< 200x200     | ⚡ Fast    | ⚡ Fast       | 🔄 OK
-200-500px     | ⚡ Fast    | 🔄 OK         | 🐌 Slow
-500-1000px    | 🔄 OK      | 🐌 Slow       | ❌ Laggy
-> 1000px      | 🐌 Slow    | ❌ Laggy      | ❌ Avoid
-```
+### Main Interface
+*Professional popup with split-panel design*
 
 ### Quality Comparison
+*See the difference between quality levels*
 
-| Setting | Sampling | Approximate Objects | Speed | Best Use Case |
-|---------|----------|---------------------|-------|---------------|
-| **Low** | 8x8 pixels | ~100 per 100x100px | ⚡ Instant | Large backgrounds, testing |
-| **Medium** | 4x4 pixels | ~500 per 100x100px | 🔄 Fast | Most images, general use |
-| **High** | 2x2 pixels | ~2000 per 100x100px | 🐌 Slow | Small icons, fine details |
+### In-Game Result
+*Your pixel art directly in the level*
 
-## 🎯 Technical Information
+## 📦 Installation
 
-### Specifications
-- **Object Type**: Square blocks (ID: 1)
-- **Color System**: Direct RGB → ccColor3B
-- **Pixel Spacing**: 1.0 units
-- **Spawn Position**: (150, 150)
-- **Alpha Threshold**: < 50 = transparent
-- **Maximum Size**: 1000x1000px (recommended)
+### Method 1: In-Game (Recommended ⭐)
+```
+1. Open Geometry Dash with Geode
+2. Click Geode button → Download tab
+3. Search "Image Importer"
+4. Click Install → Restart
+```
 
-### File Format Support
-- ✅ **PNG**: Full support, best for transparency
-- ✅ **JPG/JPEG**: Full support, no transparency
-- ✅ **BMP**: Full support, limited transparency
+### Method 2: Manual
+```bash
+1. Download .geode file from Releases
+2. Place in: GeometryDash/geode/mods/
+3. Restart Geometry Dash
+```
 
-## 🚀 Performance Optimization
+### Method 3: Build from Source
+```bash
+git clone https://github.com/Nopro497138/Image-Importer.git
+cd Image-Importer
+geode build
+geode package install
+```
 
-### Before Importing
-1. Save your level as backup
-2. Close other resource-intensive mods
-3. Test with Low quality first
-4. Check image dimensions in preview
+## 🎮 Quick Start Guide
+```
+┌─────────────────────────────────────┐
+│  1. Open Editor                     │
+│  2. Click "IMG" button (top-left)   │
+│  3. Select your image               │
+│  4. Choose quality level            │
+│  5. Click "Import"                  │
+│  6. Done! 🎉                        │
+└─────────────────────────────────────┘
+```
 
-### During Import
-- Status bar shows real-time progress
-- Green = Success
-- Orange = Warning
-- Red = Error
-- Blue = Processing
+## 📊 Performance Guide
+```ascii
+Quality Levels Comparison:
+    
+    LOW (8x8)      MEDIUM (4x4)      HIGH (2x2)
+    ┌─┬─┐          ┌──┬──┐            ┌───┬───┐
+    │ │ │          │  │  │            │   │   │
+    ├─┼─┤          ├──┼──┤            ├───┼───┤
+    │ │ │          │  │  │            │   │   │
+    └─┴─┘          └──┴──┘            └───┴───┘
+   ~100 obj        ~500 obj           ~2000 obj
+   ⚡ Fast         🔄 Balanced         🐌 Slow
+```
 
-### After Import
-- Objects spawn at (150, 150)
-- Use Select All to move the entire image
-- Group objects for easier manipulation
-- Save immediately to prevent loss
+## 🔧 Technical Specifications
 
-## ⚠️ Known Limitations
+| Feature | Details |
+|---------|---------|
+| **Supported Formats** | PNG, JPG, JPEG, BMP |
+| **Max Resolution** | 1000x1000px (recommended) |
+| **Object Type** | Square Block (ID: 1) |
+| **Color Method** | RGB → ccColor3B |
+| **Spawn Position** | (150, 150) |
+| **Transparency** | Alpha < 50 filtered |
+| **Pixel Spacing** | 1.0 unit |
 
-- ⚠️ **No Undo**: Imported objects can't be bulk undone
-- ⚠️ **No Auto-Group**: Objects are created individually
-- ⚠️ **Fixed Position**: Always spawns at (150, 150)
-- ⚠️ **Performance**: Very large imports may cause lag
-- ⚠️ **One-Way**: Can't export back to image
+## 💻 Development
 
-## 📐 UI Features
+### Prerequisites
+- CMake 3.21+
+- C++20 compiler
+- Geode SDK 4.9.0+
+- Git
+
+### Building
+```bash
+# Setup
+geode sdk install
+export GEODE_SDK=~/.geode/sdk  # or set in your env
+
+# Build
+cmake -B build
+cmake --build build --config Release
+
+# Install
+geode package install build/noahjo.imageimporter.geode
+```
+
+### Project Structure
+```
+Image-Importer/
+├── src/
+│   └── main.cpp          # Main mod code
+├── mod.json              # Mod configuration
+├── about.md              # Mod description
+├── CMakeLists.txt        # Build configuration
+├── README.md             # This file
+└── LICENSE               # MIT License
+```
+
+## 🎨 UI Design Features
 
 ### Left Panel (Controls)
-- Quality toggle buttons
-- Visual selection feedback
-- Info display with image dimensions
-- Clear status messages
+- ✨ Quality toggle buttons with visual feedback
+- 📏 Image dimension display
+- 🎯 Clear quality indicators
 
 ### Right Panel (Preview)
-- Real-time image preview
-- Image filename display
-- Preview border for clarity
-- Automatic scaling to fit
+- 🖼️ Real-time image preview
+- 📝 Filename display
+- 🔲 Professional border design
 
-### Bottom Bar (Status)
-- Color-coded status messages
-- Real-time feedback
-- Import progress indication
-- Error/success notifications
+### Status Bar
+- 🟢 Green: Success
+- 🟡 Yellow: Warning
+- 🔴 Red: Error
+- 🔵 Blue: Processing
 
-## 🐛 Troubleshooting
+## 📈 Roadmap
 
-**"Image not loaded"**
-```
-✓ Check file format (PNG, JPG, JPEG, BMP)
-✓ Ensure file isn't corrupted
-✓ Try a smaller file size
-✓ Check file path has no special characters
-```
+- [ ] Object grouping feature
+- [ ] Custom color palettes
+- [ ] Dithering algorithms
+- [ ] Batch import support
+- [ ] Preview grid overlay
+- [ ] Export to template
+- [ ] Undo functionality
+- [ ] Custom spawn position
 
-**"Editor not found"**
-```
-✓ Make sure you're in the level editor
-✓ Try reopening the level
-✓ Restart Geometry Dash
-```
+## 🐛 Known Issues
 
-**Performance Issues**
-```
-✓ Use Lower quality setting
-✓ Reduce image size before importing
-✓ Close other mods temporarily
-✓ Save and restart editor
-```
+- No bulk undo for imported objects
+- Objects not automatically grouped
+- Fixed spawn position (150, 150)
+- Large images may cause lag
 
-**Button Not Visible**
-```
-✓ Check if mod is enabled in Geode
-✓ Look for circular "IMG" button top-left
-✓ Try reloading the editor
-✓ Check for conflicting mods
-```
+## 🤝 Contributing
 
-## 🎨 Design Philosophy
+Contributions welcome! Please:
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
 
-This mod prioritizes:
-- **Clarity**: Every action has clear feedback
-- **Efficiency**: Minimal clicks to complete task
-- **Safety**: Status indicators prevent mistakes
-- **Aesthetics**: Modern, clean interface design
-- **Usability**: Intuitive workflow for all users
+### Code Style
+- Use modern C++20 features
+- Follow existing code style
+- Add comments for complex logic
+- Test thoroughly before submitting
 
-## 🆕 What's New in v1.0.0
+## 📝 License
 
-- ✨ Complete UI redesign with 2-panel layout
-- 🎯 Toggle buttons for quality selection
-- 📊 Real-time image dimension display
-- 🎨 Color-coded status feedback system
-- 💡 Professional, modern interface
-- ⚡ Optimized performance
-- 🖼️ Enhanced preview system
-- 📈 Improved error handling
+This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
 
-## 🤝 Support
+## 🙏 Acknowledgments
 
-**Found a bug or have a suggestion?**
-- 🐛 [Report Issues](https://github.com/Nopro497138/Image-Importer/issues)
-- 💬 [Discussions](https://github.com/Nopro497138/Image-Importer/discussions)
-- ⭐ [Star on GitHub](https://github.com/Nopro497138/Image-Importer)
+- **Geode Team** - Amazing modding framework
+- **GD Community** - Inspiration and feedback
+- **Contributors** - Thank you for your help!
 
-## 📜 Credits
+## 📞 Support
 
-- **Developer**: Noahjo
-- **Framework**: Geode SDK
-- **UI Design**: Custom modern interface
-- **Community**: GD Modding Community
+- **Issues**: [GitHub Issues](https://github.com/Nopro497138/Image-Importer/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Nopro497138/Image-Importer/discussions)
+- **Discord**: [Geode Discord](https://discord.gg/geode)
+
+## ⭐ Show Your Support
+
+If you like this mod, please consider:
+- ⭐ Starring the repository
+- 🐛 Reporting bugs
+- 💡 Suggesting features
+- 📢 Sharing with friends
 
 ---
 
-**Made with ❤️ for the Geometry Dash community**
+<div align="center">
+
+**Made with ❤️ by [Noahjo](https://github.com/Nopro497138)**
 
 *Transform your creativity into pixel art!* 🎨✨
+
+[⬆ Back to Top](#-image-importer-for-geometry-dash)
+
+</div>
